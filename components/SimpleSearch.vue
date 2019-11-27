@@ -1,9 +1,11 @@
 <template>
   <div>
     <b-input-group>
-      <b-input v-model="query" placeholder="e.g., Hitchen's razor ⏎" @keyup.enter="search" />
+      <b-input v-model="query" @keyup.enter="search" placeholder="e.g., Hitchen's razor ⏎" />
       <b-input-group-append>
-        <b-button variant="primary" @click="search">Search</b-button>
+        <b-button @click="search" variant="primary">
+          Search
+        </b-button>
       </b-input-group-append>
     </b-input-group>
   </div>
@@ -17,12 +19,6 @@ export default {
       default: ''
     }
   },
-  mounted() {
-    if (this.initialQuery !== '') {
-      this.query = this.initialQuery
-      this.search()
-    }
-  },
   data() {
     return {
       query: '',
@@ -33,6 +29,12 @@ export default {
   watch: {
     results() {
       this.$emit('input', this.results)
+    }
+  },
+  mounted() {
+    if (this.initialQuery !== '') {
+      this.query = this.initialQuery
+      this.search()
     }
   },
   methods: {

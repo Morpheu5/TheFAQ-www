@@ -7,7 +7,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'TheFAQ',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -15,6 +15,11 @@ export default {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || ''
+      },
+      {
+        hid: 'og:site_name',
+        name: 'og:site_name',
+        content: 'TheFAQ'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
@@ -72,6 +77,11 @@ export default {
         name: 'faq-id',
         path: '/faq/*',
         component: resolve(__dirname, 'components/faq_id.vue')
+      })
+      routes.push({
+        name: 'faq',
+        path: '/faq',
+        redirect: '/'
       })
       sortRoutes(routes)
     }

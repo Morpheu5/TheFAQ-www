@@ -13,7 +13,7 @@
               <a :href="`/faq/${result['id']}`">{{ result['title'] }}</a>
             </b-card-title>
             <b-card-text>
-              <div v-html="$md.render(result['summary'])" class="mt-3"></div>
+              <div v-html="$md.render(result['summary'])" class="mt-3" />
             </b-card-text>
           </b-card>
         </b-col>

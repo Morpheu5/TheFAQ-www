@@ -63,7 +63,7 @@ export default {
         baseURL: process.env.API_URL || 'http://localhost:4567'
       }
     ],
-    '@nuxtjs/pwa',
+    // '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     '@nuxtjs/markdownit'
